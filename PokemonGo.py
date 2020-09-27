@@ -1,11 +1,9 @@
 
 
-#Extra Credit Part 1 have completed
-
 import tkinter as tk
 import random
 
-#FIRST: Implement and test your Pokemon class below
+#FIRST: Implement and test my Pokemon class below
 class Pokemon:
     print("Implement this and then remove this print statement")
     def __init__(self,dex=0,name='',catch_rate=0,speed=0):
@@ -18,7 +16,7 @@ class Pokemon:
         return str(self.name)
 
         
-#NEXT: Complete the class definition provided below
+##Read in the data file from pokedex.csv at some point here
 class SafariSimulator(tk.Frame):
     def __init__(self, master=None):
         tk.Frame.__init__(self, master)
@@ -38,13 +36,9 @@ class SafariSimulator(tk.Frame):
         fp.close()
         self.safari_balls = 30
         self.caught_Pokemon = []
-        #Read in the data file from pokedex.csv at some point here
-        #It's up to you how you store and handle the data 
-        #(e.g., list, dictionary, etc.),
-        #but you must use your Pokemon class in some capacity
-        #Initialize any instance variables you want to keep track of
+        
 
-        #DO NOT MODIFY: These lines set window parameters and create widgets
+        
         tk.Frame.__init__(self, master)
         master.minsize(width=275, height=350)
         master.maxsize(width=275, height=350)
@@ -56,9 +50,8 @@ class SafariSimulator(tk.Frame):
        
     def createWidgets(self):
         print("In createWidgets")
-        #See the image in the instructions for the general layout required
         
-        #You need to create an additional "throwButton"
+       
         self.throwButton = tk.Button(self)
         self.throwButton["text"] = "Throw Safari Ball (%s left)"%(self.safari_balls)
         self.throwButton["command"] = self.throwBall
@@ -74,7 +67,7 @@ class SafariSimulator(tk.Frame):
         self.messageLabel = tk.Label(bg="grey")
         self.messageLabel.pack(fill="x", padx=5, pady=5)
 
-        #You need to create two additional labels:
+        
 
         #Complete and pack the pokemonImageLabel here.
         self.pokemonImageLabel = tk.Label(bg="white")
@@ -104,8 +97,7 @@ class SafariSimulator(tk.Frame):
             #Change the pokemonImageLabel to show the right pokemon
         self.next_Pokemon.photo= tk.PhotoImage(file = 'sprites/'+str(self.next_Pokemon.dex)+'.gif')
         self.pokemonImageLabel['image'] = self.next_Pokemon.photo
-        #Hint: to see how to create an image, look at the documentation 
-        #for the PhotoImage/Label classes in tkinter.
+        
         
         #Once you generate a PhotoImage object, it can be displayed 
         #by setting self.pokemonImageLabel["image"] to it
@@ -120,17 +112,8 @@ class SafariSimulator(tk.Frame):
         self.safari_balls -= 1
         self.throwButton["text"] = "Throw Safari Ball (%s left)"%(self.safari_balls)
         
-        #This method must:
 
-            #Decrement the number of balls remaining
-            #Try to catch the pokemon
-            #Check to see if endAdventure() should be called
-
-        #To determine whether or not a pokemon is caught, generate a random
-        #number between 0 and 1, using random.random().  If this number is
-        #less than min((catchRate+1), 151) / 449.5, then it is caught. 
-        #catchRate is the integer in the Catch Rate column in pokedex.csv, 
-        #for whatever pokemon is being targetted.
+        
         a = random.random()
         a = a*100
         runawayProb = int((2*self.next_Pokemon.speed)/256*100)
@@ -177,16 +160,6 @@ class SafariSimulator(tk.Frame):
             else:
                 self.catchProbLabel['text'] ='Oops, you caught 0 Pokémon.'
                  
-        #This method must: 
-
-        #Display adventure completion message
-        #List captured pokemon
-
-        #Hint: to remove a widget from the layout, you can call the 
-        #pack_forget() method.
-        
-        #For example, self.pokemonImageLabel.pack_forget() removes 
-        #the pokemon image.
 
 
 #DO NOT MODIFY: These lines start your app
