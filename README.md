@@ -13,4 +13,6 @@ This repo is for Python Final Project. In this project, I created a graphical us
 2. pokedex.csv, a CSV file which contains the dex number, name, catch rate, and speed of each of the 151 original species of Pokémon.
 3. sprites, a folder which contains GIF images of each Pokémon, ordered by dex number.
 
+### The standard GUI should look like this:
+
 
