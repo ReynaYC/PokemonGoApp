@@ -14,5 +14,5 @@ This repo is for Python Final Project. In this project, I created a graphical us
 3. sprites, a folder which contains GIF images of each Pokémon, ordered by dex number.
 
 ### The standard GUI should look like this:
-
+![P1: Pokemon](./images/pokemon.png)
 
